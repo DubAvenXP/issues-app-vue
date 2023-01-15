@@ -1,0 +1,21 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "editorconfig.editorconfig",
+        "vue.volar",
+        "wayou.vscode-todo-highlight",
+        "usernamehw.errorlens",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "wix.vscode-import-cost",
+        "NicholasHsiang.vscode-pinia-snippets",
+        "Gruntfuggly.todo-tree"
+    ],
+    "unwantedRecommendations": [
+        "octref.vetur",
+        "hookyqr.beautify",
+        "dbaeumer.jshint",
+        "ms-vscode.vscode-typescript-tslint-plugin"
+    ]
+}
