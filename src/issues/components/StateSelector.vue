@@ -1,11 +1,22 @@
 <script setup lang="ts">
-import LoaderSpinner from 'src/shared/components/LoaderSpinner.vue';
+import { storeToRefs } from 'pinia';
+import { useIssuesStore } from 'src/stores/issues';
+
+const issuesStore = useIssuesStore();
+const { state } = storeToRefs(issuesStore);
 </script>
 <template>
-    <LoaderSpinner size="50px" :thickness="1" :show-text="false" />
-    <q-chip v-for="label of 10" :key="label" color="primary" outline clickable>
-        Primary
-    </q-chip>
+    <q-btn-toggle
+        v-model="state"
+        toggle-color="primary"
+        push
+        spread
+        :options="[
+            { label: 'All', value: 'all' },
+            { label: 'Open', value: 'open' },
+            { label: 'Close', value: 'closed' },
+        ]"
+    />
 </template>
 
 <style scoped></style>

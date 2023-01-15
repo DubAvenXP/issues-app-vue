@@ -1,19 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-const model = ref(null);
+import LoaderSpinner from 'src/shared/components/LoaderSpinner.vue';
 </script>
 <template>
-    <q-btn-toggle
-        v-model="model"
-        toggle-color="primary"
-        push
-        spread
-        :options="[
-            { label: 'All', value: 'all' },
-            { label: 'Open', value: 'open' },
-            { label: 'Close', value: 'closed' },
-        ]"
-    />
+    <LoaderSpinner size="50px" :thickness="1" :show-text="false" />
+    <q-chip v-for="label of 10" :key="label" color="primary" outline clickable>
+        Primary
+    </q-chip>
 </template>
 
 <style scoped></style>
