@@ -1,3 +1,25 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import EssentialLink, {
+    EssentialLinkProps,
+} from 'src/shared/components/EssentialLink.vue';
+
+const essentialLinks: EssentialLinkProps[] = [
+    {
+        title: 'Docs',
+        caption: 'quasar.dev',
+        icon: 'school',
+        link: 'https://quasar.dev',
+    },
+];
+
+const leftDrawerOpen = ref(false);
+
+function toggleLeftDrawer() {
+    leftDrawerOpen.value = !leftDrawerOpen.value;
+}
+</script>
+
 <template>
     <q-layout view="hHh Lpr lFf" class="text-white bg-dark">
         <q-header>
@@ -34,25 +56,3 @@
         </q-page-container>
     </q-layout>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue';
-import EssentialLink, {
-    EssentialLinkProps,
-} from 'src/shared/components/EssentialLink.vue';
-
-const essentialLinks: EssentialLinkProps[] = [
-    {
-        title: 'Docs',
-        caption: 'quasar.dev',
-        icon: 'school',
-        link: 'https://quasar.dev',
-    },
-];
-
-const leftDrawerOpen = ref(false);
-
-function toggleLeftDrawer() {
-    leftDrawerOpen.value = !leftDrawerOpen.value;
-}
-</script>
