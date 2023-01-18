@@ -18,10 +18,12 @@
         "pinia": "^2.0.11",
         "quasar": "^2.6.0",
         "vue": "^3.0.0",
+        "vue-markdown-render": "^2.0.1",
         "vue-router": "^4.0.0"
     },
     "devDependencies": {
         "@quasar/app-vite": "^1.0.0",
+        "@types/markdown-it": "^12.2.3",
         "@types/node": "^12.20.21",
         "@typescript-eslint/eslint-plugin": "^5.10.0",
         "@typescript-eslint/parser": "^5.10.0",

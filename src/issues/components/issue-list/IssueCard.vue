@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { toRef } from 'vue';
+import VueMarkdown from 'vue-markdown-render';
+
 import { Issue, State } from 'src/issues/interfaces/issue';
+import { timeSince } from 'src/shared/helpers/time-since';
 
 interface Props {
     issue: Issue;
@@ -26,7 +29,7 @@ const issue = toRef(props, 'issue');
                     }}</router-link>
                 </q-item-label>
                 <q-item-label caption
-                    >{{ issue.created_at }} - 2 days ago
+                    >{{ timeSince(issue.created_at) }}
                 </q-item-label>
             </q-item-section>
 
@@ -59,7 +62,11 @@ const issue = toRef(props, 'issue');
         <q-separator />
 
         <q-item-section class="q-pa-md">
-            {{ issue.body }}
+            <VueMarkdown
+                :source="issue.body || ''"
+                class="markdown-content"
+                html
+            />
         </q-item-section>
 
         <q-separator />
@@ -81,4 +88,10 @@ const issue = toRef(props, 'issue');
     </q-card>
 </template>
 
-<style scoped></style>
+<style scoped>
+/* # remove margin form all h3 tags inside .markdown-content */
+.markdown-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+</style>
