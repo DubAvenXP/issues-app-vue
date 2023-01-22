@@ -88,10 +88,14 @@ const issue = toRef(props, 'issue');
     </q-card>
 </template>
 
-<style scoped>
+<style>
 /* # remove margin form all h3 tags inside .markdown-content */
 .markdown-content h3 {
     margin: 0;
     font-size: 1.2rem;
+}
+
+.markdown-content img {
+    max-width: 100% !important;
 }
 </style>
