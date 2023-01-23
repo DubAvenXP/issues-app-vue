@@ -24,8 +24,12 @@ const getIssues = async (labels: string[], state: State): Promise<Issue[]> => {
 export const useIssues = () => {
     const { labels, state } = useStore();
 
-    const issuesQuery = useQuery(['issues', { labels, state }], () =>
-        getIssues(labels.value, state.value)
+    const issuesQuery = useQuery(
+        ['issues', { labels, state }],
+        () => getIssues(labels.value, state.value),
+        {
+            // staleTime: 1000 * 60,
+        }
     );
     return {
         issuesQuery,
