@@ -14,7 +14,7 @@ const getLabels = async (): Promise<Label[]> => {
     return data;
 };
 
-const useCounter = () => {
+export const useLabels = () => {
     const issuesStore = useIssuesStore();
     const { labels } = storeToRefs(issuesStore);
 
@@ -28,5 +28,3 @@ const useCounter = () => {
         toggleLabel: issuesStore.toggleLabel,
     };
 };
-
-export default useCounter;

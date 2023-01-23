@@ -4,6 +4,13 @@ import { VueQueryPlugin } from '@tanstack/vue-query';
 // more info on params: https://v2.quasar.dev/quasar-cli/boot-files
 export default boot(async ({ app }) => {
     VueQueryPlugin.install(app, {
-        // Configurations
+        queryClientConfig: {
+            defaultOptions: {
+                queries: {
+                    refetchOnWindowFocus: true,
+                    refetchOnReconnect: true,
+                },
+            },
+        },
     });
 });
